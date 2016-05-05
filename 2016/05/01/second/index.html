@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>第一篇博客 | 😳.风往北吹_的博客</title>
+  <title>UINavigationBar的结构 | 😳.风往北吹_的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#评论也部署上去了，哈哈。就这样吧，开始新的博客记录
-1234    - (void)init &amp;#123;    NSLog(&amp;quot;Hello world!&amp;quot;);&amp;#125;">
+  <meta name="description" content="导航栏几乎是每个页面都会碰到的问题，一般两种处理方式：1.隐藏掉不显示 2.自定义
+###1. 添加导航栏123TestViewController * mainVC = [[TestViewController alloc] init];UINavigationController * nav = [[UINavigationController alloc] initWithRootViewC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
+<meta property="og:title" content="UINavigationBar的结构">
 <meta property="og:url" content="http://wangxg1989.com/2016/05/01/second/index.html">
 <meta property="og:site_name" content="😳.风往北吹_的博客">
-<meta property="og:description" content="#评论也部署上去了，哈哈。就这样吧，开始新的博客记录
-1234    - (void)init &amp;#123;    NSLog(&amp;quot;Hello world!&amp;quot;);&amp;#125;">
-<meta property="og:updated_time" content="2016-05-05T15:28:02.000Z">
+<meta property="og:description" content="导航栏几乎是每个页面都会碰到的问题，一般两种处理方式：1.隐藏掉不显示 2.自定义
+###1. 添加导航栏123TestViewController * mainVC = [[TestViewController alloc] init];UINavigationController * nav = [[UINavigationController alloc] initWithRootViewC">
+<meta property="og:image" content="http://7xlv8a.com1.z0.glb.clouddn.com/NavgationBar">
+<meta property="og:image" content="http://7xlv8a.com1.z0.glb.clouddn.com/NavigationBar结构图">
+<meta property="og:image" content="http://7xlv8a.com1.z0.glb.clouddn.com/navBarbg.png">
+<meta property="og:image" content="http://7xlv8a.com1.z0.glb.clouddn.com/UIController分类">
+<meta property="og:image" content="http://7xlv8a.com1.z0.glb.clouddn.com/NavigationBar图">
+<meta property="og:updated_time" content="2016-05-05T15:32:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="#评论也部署上去了，哈哈。就这样吧，开始新的博客记录
-1234    - (void)init &amp;#123;    NSLog(&amp;quot;Hello world!&amp;quot;);&amp;#125;">
+<meta name="twitter:title" content="UINavigationBar的结构">
+<meta name="twitter:description" content="导航栏几乎是每个页面都会碰到的问题，一般两种处理方式：1.隐藏掉不显示 2.自定义
+###1. 添加导航栏123TestViewController * mainVC = [[TestViewController alloc] init];UINavigationController * nav = [[UINavigationController alloc] initWithRootViewC">
+<meta name="twitter:image" content="http://7xlv8a.com1.z0.glb.clouddn.com/NavgationBar">
   
     <link rel="alternative" href="/atom.xml" title="😳.风往北吹_的博客" type="application/atom+xml">
   
@@ -203,7 +209,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一篇博客
+      UINavigationBar的结构
     </h1>
   
 
@@ -219,8 +225,77 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#评论也部署上去了，哈哈。就这样吧，开始新的博客记录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">- (void)init &#123;</span><br><span class="line">    NSLog(&quot;Hello world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>导航栏几乎是每个页面都会碰到的问题，一般两种处理方式：1.隐藏掉不显示 2.自定义</p>
+<p>###1. 添加导航栏<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TestViewController * mainVC = [[TestViewController alloc] init];</span><br><span class="line"><span class="built_in">UINavigationController</span> * nav = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:mainVC];</span><br><span class="line"><span class="keyword">self</span>.window.rootViewController = nav;</span><br></pre></td></tr></table></figure></p>
+<p>###2. 隐藏导航栏<br>在的TestViewController.m文件中，使用以下代码：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">[<span class="keyword">super</span> viewDidLoad];</span><br><span class="line"></span><br><span class="line">[<span class="keyword">self</span>.navigationController setNavigationBarHidden:<span class="literal">YES</span>];</span><br><span class="line"><span class="comment">//self.navigationController.navigationBar.hidden = YES;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>说明：通过属性直接设置之所以能成功，是因为虽然navigationBar是readonly，但是hidden是默认的(readwrite)。建议使用第一个，通过发送消息来设置。</p>
+<p>###3. 修改导航栏背景色<br>由于系统自带的导航栏已经不能满足用户的审美需求，因此开发中导航栏或多或少都被自定义了；即便只是修改了背景色或是字体颜色。</p>
+<ul>
+<li>方式一：通过代理来设置<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBarTintColor:[<span class="built_in">UIColor</span> redColor]];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://7xlv8a.com1.z0.glb.clouddn.com/NavgationBar" alt="效果图"></p>
+<p><em>说明：为什么能修改所有导航栏的背景色?</em></p>
+<ol>
+<li>查看UINavigationBar发送的消息appearance,是一个名为UIAppearance协议。根据官网解释：UIAppearance是一个外观协议(装饰模式)。要想改变外观需要实现此协议，因此UINavigationBar内部肯定实现了此协议。</li>
+<li>查看头文件UIAppearance协议里面有4个方法，但是根据官网文档，iOS9以后有两个方法被废弃。因此只有下面两个可用，都返回的是类的对象，因此可以给此类发送修改外观的消息.比如：setBarTintColor。其实这里拿到对象后可以任意修改。</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ (instancetype)appearance;</span><br><span class="line">+ (instancetype)appearanceForTraitCollection:(<span class="built_in">UITraitCollection</span> *)trait</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式二、直接通过属性设置，或发送消息来设置</li>
+</ul>
+<p>在的TestViewController.m文件中，使用以下代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">[<span class="keyword">super</span> viewDidLoad];</span><br><span class="line"><span class="comment">// 无效果</span></span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationBar.backgroundColor = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line"><span class="comment">// 可行</span></span><br><span class="line">[<span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"nav.png"</span>] forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br><span class="line">&#125;</span><br><span class="line">```   </span><br><span class="line">说明：</span><br><span class="line"><span class="number">1.</span> 下面代码为什么无效果，其实看一下结构图就明白了。</span><br><span class="line"></span><br><span class="line">```objectivec</span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationBar.backgroundColor = [<span class="built_in">UIColor</span> redColor];</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xlv8a.com1.z0.glb.clouddn.com/NavigationBar结构图" alt="UINavgationBar结构图"></p>
+<p>没错：这样修改的是navigationBar的背景色，而navigationBar里面添加了UIView和UIImageView，UILabel等控件，覆盖了navigationBar。</p>
+<ol>
+<li>那么如何来修改？</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"yao_1"</span>] forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br></pre></td></tr></table></figure>
+<p>通过添加背景图，使用默认的模式。<br>注意：这里会出现状态栏背景色也变化的问题，其实这是由于在navigationBar添加的控件自动延伸到边界造成的。如果只是修改导航栏的背景色，完全没必要再给navigationBar添加控件了，给navigationBar堆太多的无用控件，不能忍。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置透明</span></span><br><span class="line">[<span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"yao_1"</span>] forBarMetrics:<span class="built_in">UIBarMetricsCompact</span>];</span><br><span class="line"><span class="comment">// 修改navigationBar的背景色</span></span><br><span class="line"><span class="keyword">self</span>.navigationController.navigationBar.backgroundColor = [<span class="built_in">UIColor</span> redColor];</span><br></pre></td></tr></table></figure>
+<p>这样修改navigationBar背景色，才有种很舒畅的感觉，有木有。因为我就只是要修改navigationBar的背景色而已么。效果图：<br><img src="http://7xlv8a.com1.z0.glb.clouddn.com/navBarbg.png" alt="UINavgationBar效果图"></p>
+<p>为什么要这样</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBarTintColor:[<span class="built_in">UIColor</span> redColor]];</span><br></pre></td></tr></table></figure>
+<p>或者为什么要这样</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span>.navigationController.navigationBar setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"yao_1"</span>] forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br></pre></td></tr></table></figure>
+<p><strong>UINavigationBar和UINavigationController、UIViewController关系</strong></p>
+<p>1.导航栏类名：UINavigationBar，是导航控制器(UINavgationController)下得一个属性,一般给一个视图控制器(TestViewController)添加导航栏，也就是把它添加为导航控制器(UINavgationController)的根视图控制器。</p>
+<p>2.在此视图控制器中为什么可以直接操作导航控制器，因为TestViewController类是自定义的继承自UIViewController类的。而UIViewController类中有一个类别，声明了UINavgationController类的一个属性。在第一步的时候，把这个属性设置为上面导航控制器的对象。</p>
+<p><img src="http://7xlv8a.com1.z0.glb.clouddn.com/UIController分类" alt="UIController分类"></p>
+<p>3.UINavigationBar对照图如下：<br><img src="http://7xlv8a.com1.z0.glb.clouddn.com/NavigationBar图" alt="UINavigationBar对照图"></p>
+<p><strong>UINavgationBar结构图说明：</strong></p>
+<ul>
+<li>从图中的对照关系可以看到，UINavigationBar包含一个：UINavigationBarBackground控件(已经延伸到边界，覆盖掉了导航栏),另一个UINavigationBarBackIndicatorView(其实就是那个蓝色的返回按钮，当push进来一个ViewController才会显示)</li>
+<li>UINavigationBarBackground控件里面包含：UIBackdropView(UIBackdropEffectView标识阴影视图),UIImageView</li>
+</ul>
+<p><strong>总结：</strong></p>
+<p><strong><em>可以看到，UINavigationBarBackIndicatorView(返回按钮只占了左边一部分区域，并且在push新的视图控制器时才显示。因此，显示在最上面的是UIImageView)。所以，这才是通过代码</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.navigationController.navigationBar.backgroundColor = [UIColor redColor];</span><br></pre></td></tr></table></figure>
+<p><strong>*修改背景色，老是被遮住的根本原因。解决方法，因此掉UIImageView控件，或者干脆给UIImageView设置一张你想要的背景色的图片</strong>。*</p>
+<p>##二、UINavigationBar的自定义</p>
+<p>###1. 自定义<br>一般自定义分三种情况：左侧、右侧和中间视图</p>
+<ul>
+<li>自定义左侧按钮</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">[<span class="keyword">super</span> viewDidLoad];</span><br><span class="line"><span class="comment">// 自定义导航栏左侧按钮</span></span><br><span class="line"><span class="built_in">UIButton</span> * leftBtn = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeRoundedRect</span>];</span><br><span class="line">leftBtn.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">7</span>, <span class="number">83</span>, <span class="number">30</span>);</span><br><span class="line">leftBtn.backgroundColor = [<span class="built_in">UIColor</span> orangeColor];</span><br><span class="line">[leftBtn addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(onTap) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line"><span class="built_in">UIBarButtonItem</span> * leftItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithCustomView:leftBtn];</span><br><span class="line"><span class="keyword">self</span>.navigationItem.leftBarButtonItem = leftItem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 点击事件处理</span></span><br><span class="line">- (<span class="keyword">void</span>)onTap &#123;</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"点击了导航栏左侧按钮"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>自定义右侧按钮</p>
+<blockquote>
+<p>和自定义左侧按钮方法类似，差别如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.navigationItem.rightBarButtonItem = rightItem;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>自定义中间视图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UIView * centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 7, 110, 30)];</span><br><span class="line">centerView.backgroundColor = [UIColor greenColor];</span><br><span class="line">self.navigationItem.titleView = centerView;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###2. 结构分析</p>
+<p>从自定义的代码看到，自定义都是在修改navigationItem里面的东西。查看头文件可知，TestViewController之所以可以操作navigationItem，和上面UINavigationController实现方式一样。</p>
+<p>UINavigationBar类中有一个items集合，存储navigationItem和其他相关内容。UINavigationItem类里面存储leftBarButtonItems、rightBarButtonItems等集合。同时也会有leftBarButtonItem、rightBarButtonItem控件，根据集合是否为空来决定是否创建和显示这些控件。</p>
+<p>因此，当不设置内容时，默认集合为空，所有控件也就不显示。</p>
+<h3 id="3-手写代码技巧"><a href="#3-手写代码技巧" class="headerlink" title="3. 手写代码技巧"></a>3. 手写代码技巧</h3><p>对于导航栏的自定义，大部分app都是左侧为”返回”，右侧为”地图”，“扫码”等按钮，中间除显示标题外，可能会自定义个分段按钮，选择菜单等。而对于这些自定义的按钮和视图，尺寸都是根据图片尺寸和导航栏的宽高凭感觉设置的(总之，我以前是这样&gt;.&lt;)。<br>今天在测试iOS7的布局使用了SB，发现控件拖上去它会自适应系统给定的尺寸。然后我绑定控件获取了这些控件的尺寸。测试了iPhone4s和iPhone6，获取到的左侧和右侧按钮尺寸：frame = {0,7,83,30},中间的视图尺寸：frame = {0，7，110，30}。<br>这样，以后导航栏按钮没有什么特殊要求，就可以都按这个尺寸设置了。</p>
+
       
     </div>
     
@@ -247,7 +322,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="second" data-title="第一篇博客" data-url="http://wangxg1989.com/2016/05/01/second/"></div>
+	<div class="ds-thread" data-thread-key="second" data-title="UINavigationBar的结构" data-url="http://wangxg1989.com/2016/05/01/second/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
